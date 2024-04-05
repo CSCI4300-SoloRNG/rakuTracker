@@ -1,0 +1,13 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #0E0019;
+    color: #fff;
+    /*make footer stay at bottom and take up full width of screen*/
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

@@ -17,16 +17,21 @@ export default function Home() {
                         <Drawing/>
                     </div>
                     <div className="column">
-                        <h2>How it works</h2>
-                        <p>Each day, draw something new based on a random prompt and upload it here. Over time, you can
-                            see how your drawing has improved!</p>
+                        <div className="box">
+                            <h2>How it works</h2>
+                            <p>Each day, draw something new based on a random prompt and upload it here. Over time, you
+                                can
+                                see how your drawing has improved!</p>
+                        </div>
                         <Button text={"Create Account"}/>
                     </div>
                 </div>
                 <div className="row">
-                    <div className="column">
-                        <h2>Carousel Header</h2>
-                        <Carousel/>
+                    <div className="box">
+                        <div className="column">
+                            <h2>Most Recent Prompts</h2>
+                            <Carousel/>
+                        </div>
                     </div>
                 </div>
             </main>
