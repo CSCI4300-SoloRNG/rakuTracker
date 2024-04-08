@@ -2,55 +2,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Kreon:wght@300..700&family=Mitr:wght@200;300;400;500;600;700&display=swap');
 
 .container {
-  display: flex;
+    display: flex;
 }
 
-.better-h1
-{
-font-size: 1.33vw;
+.better-h1 {
+    font-size: 1.33vw;
 }
 
-.better-header
-{
-  font-family: 'Mitr'; 
-  font-weight: 600;
-  font-size: 2.1vw;
+.better-header {
+    font-family: 'Mitr', serif;
+    font-weight: 600;
+    font-size: 2.1vw;
 }
 
-.better-header-large
-{
-  font-family: 'Mitr'; 
-  font-weight: 600;
-  font-size: 3vw;
-  line-height: 90%;
+.better-header-large {
+    font-family: 'Mitr', serif;
+    font-weight: 600;
+    font-size: 3vw;
+    line-height: 90%;
 }
 
 .left-content {
-flex: 1.9; /* Takes up 2/3 of the container */
-/*background-color: #f0f0f0;*/
-padding-left: 5%;
-padding-top: 1%;
-padding-right: 1%;
-padding-bottom: 3%;
+    flex: 1.9; /* Takes up 2/3 of the container */
+    /*background-color: #f0f0f0;*/
+    padding: 1% 1% 3% 5%;
 }
 
 .right-content {
-  flex: 1.1; /* Takes up 1/3 of the container */
-  /*background-color: #dcdcdc;*/
-  padding-right: 5%;
-  padding-left: 3%;
-  padding-top: 6.75%;
-  padding-bottom: 1%;
+    flex: 1.1; /* Takes up 1/3 of the container */
+    /*background-color: #dcdcdc;*/
+    padding: 6.75% 5% 1% 3%;
 }
 
 .info-modal {
-  background-color: #0E0019;
-  border-radius: 10%;
-  padding: 2%;
-  font-family: 'Mitr';
-  font-weight: 300;
+    background-color: #0E0019;
+    border-radius: 10%;
+    padding: 2%;
+    font-family: 'Mitr', serif;
+    font-weight: 300;
 }
 
 .info-modal > p {
-  font-size: x-large;
+    font-size: x-large;
 }
