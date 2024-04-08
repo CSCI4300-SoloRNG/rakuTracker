@@ -1,5 +1,6 @@
 .drawing > img {
-    height: 50%;
-    width: 50%;
-    border-radius: 20px;
+    height: 85%;
+    width: 85%;
+    border-radius: 10%;
+    display: inline-block;
 }

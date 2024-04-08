@@ -1,11 +1,10 @@
-.button {
+.smallbutton {
 
     padding: 8px 16px;
     background-color: #B178FA;
     text-align: center;
     text-decoration: none;
-    display: block;
-    width: 100%;
+    display: inline;
     font-size: 16px;
     margin: 0;
     cursor: pointer;

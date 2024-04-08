@@ -33,6 +33,14 @@ export default function Home() {
                     </div>
                 </div>
             </main>
+            <div className="row">
+                    <div className="box">
+                        <div className="column">
+                            <h2>Most Recent Prompts</h2>
+                            <Carousel/>
+                        </div>
+                    </div>
+                </div>
             <Footer/>
         </div>
     );

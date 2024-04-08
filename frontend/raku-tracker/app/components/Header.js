@@ -1,13 +1,13 @@
 
 import React from 'react';
 import './Header.css';
-import Button from './Button';
+import SmallButton from './SmallButton';
 
 const Header = props => {
     return (
         <header>
             <h1 className="header-title">rakuTracker</h1>
-            <Button text={"Login"}/>
+            <SmallButton text={"Login"}/>
         </header>
     );
 };
