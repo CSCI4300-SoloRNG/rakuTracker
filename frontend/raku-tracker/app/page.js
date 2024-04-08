@@ -3,6 +3,7 @@ import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import Drawing from "@/app/components/Drawing";
 import Button from "@/app/components/Button";
+import Link from 'next/link';
 
 export default function Home() {
 

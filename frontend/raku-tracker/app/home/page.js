@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+import styles from "@/app/page.module.css";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import Drawing from "@/app/components/Drawing";
@@ -17,7 +17,7 @@ export default function Home() {
                         {/*Look at the bullsh*t I have to do to comment this*/}
                         {/*erm. I mean, Left Content*/}
                         <div className={styles["better-h1"]}>
-                            <h1 className={styles["better-header-large"]}>Improve your drawing skills daily!</h1>
+                            <h1 className={styles["better-header-large"]}>Latest Work</h1>
                             <br/>
                             <Drawing/>
                         </div>
@@ -25,7 +25,7 @@ export default function Home() {
                     <div className={styles["right-content"]}>
                         {/*Right Content*/}
                         <div className={styles["info-modal"]}>
-                            <h2 className={styles["better-header"]}>How it works</h2>
+                            <h2 className={styles["better-header"]}>Current Areas of Focus</h2>
                             <p>Each day, draw something new based on a random prompt and upload it here. Over time, you
                                 can see how your drawing has improved!</p>
                             <br/>
