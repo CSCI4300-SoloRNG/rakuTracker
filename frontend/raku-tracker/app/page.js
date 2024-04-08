@@ -10,7 +10,7 @@ export default function Home() {
         <div>
             <Header/>
             <main>
-                <div class={styles.container}>
+                <div className={styles.container}>
                     <div className={styles["left-content"]}>
                         {/*Look at the bullsh*t I have to do to comment this*/}
                         {/*erm. I mean, Left Content*/}
