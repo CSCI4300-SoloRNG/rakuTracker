@@ -4,7 +4,7 @@ import './SmallButton.css';
 const SmallButton = props => {
     return (
         <button
-            className="smallbutton"
+            className="small-button"
             type={props.type || 'button'}
             onClick={props.onClick}
         >
