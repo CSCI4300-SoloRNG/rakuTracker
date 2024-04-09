@@ -1,12 +1,17 @@
+'use client'
 import React from 'react';
 import './SmallButton.css';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation'
 
 const SmallButton = props => {
+    const router = useRouter();
+    const newOnClick = props.onClick || (() => router.push(props.target));
     return (
         <button
             className="small-button"
             type={props.type || 'button'}
-            onClick={props.onClick}
+            onClick={newOnClick}
         >
             {props.text}
         </button>

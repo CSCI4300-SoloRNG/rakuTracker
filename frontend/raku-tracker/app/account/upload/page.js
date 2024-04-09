@@ -5,6 +5,7 @@ import Footer from "@/app/components/Footer";
 import Drawing from "@/app/components/Drawing";
 import Button from "@/app/components/Button";
 import Carousel from "@/app/components/Carousel";
+import SmallButton from "@/app/components/SmallButton";
 
 export default function Upload() {
     return (
