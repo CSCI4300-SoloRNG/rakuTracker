@@ -10,32 +10,47 @@ import SmallButton from "@/app/components/SmallButton";
 export default function Upload() {
     return (
         <div>
-            <Header/>
-            <main className="container">
-                <div className="row">
-                    <div className="column">
-                        <h2>Improve your drawing skills daily!!</h2>
+            <Header login={false} createAccount={false} upload={false} logout={true}/>
+            <main className={styles["outer-container"]}>
+                {/**/}
+                <h1 className={`${styles["better-leader-large"]} ${styles["centered"]}`}>Upload</h1>
+
+                {/**/}
+                <div className={styles["row"]}>
+
+                    {/*preview, upload button*/}
+                    <div className={styles["column"]}>
+                        <h2 className={`${styles["better-header"]} ${styles["centered"]}`}>Preview</h2>
                         <Drawing/>
+                        <br/>
+                        <SmallButton text="Pick Image"/>
                     </div>
-                    <div className="column">
-                        {/*Right Content*/}
-                        <div className={styles["info-modal"]}>
-                            <h2 className={styles["better-header"]}>How it works</h2>
-                            <p>Each day, draw something new based on a random prompt and upload it here. Over time, you
-                                can see how your drawing has improved!</p>
+
+                    {/*Form (Prompt, Tags, Time)*/}
+                    <div className={styles["column"]}>
+                        <h2 className={styles["better-header"]}>Details</h2>
+                        <form>
+                            <label>
+                                Prompt:&nbsp;
+                                <input type="text" name="prompt"/>
+                            </label>
                             <br/>
-                            <Button text={"Create Account"}/>
-                        </div>
+                            <br/>
+                            <label>
+                                Tags:&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="text" name="tags"/>
+                            </label>
+                            <br/>
+                            <br/>
+                            <label>
+                                Time:&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="text" name="time"/>
+                            </label>
+                        </form>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="box">
-                        <div className="column">
-                            <h2>Most Recent Prompts</h2>
-                            <Carousel/>
-                        </div>
-                    </div>
-                </div>
+
+                <Button text="Upload" target={"/home"}/>
             </main>
             <Footer/>
         </div>

@@ -48,7 +48,6 @@
 }
 
 
-
 .info-modal {
     background-color: #0E0019;
     border-radius: 10%;
@@ -70,16 +69,28 @@
 }
 
 .centered {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
 }
 
-.latest-work
-{
+.latest-work {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.row {
+    display: flex;
+    flex: 1;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.column {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
 }
