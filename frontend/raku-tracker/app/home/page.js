@@ -12,36 +12,41 @@ export default function Home() {
         <div>
             <Header/>
             <main>
+            <div className={styles["outer-container"]}>
                 <div className={styles.container}>
-                    <div className={styles["left-content"]}>
+                    <div className={styles["left-content-small"]}>
                         {/*Look at the bullsh*t I have to do to comment this*/}
                         {/*erm. I mean, Left Content*/}
                         <div className={styles["better-h1"]}>
                             <h1 className={styles["better-header-large"]}>Latest Work</h1>
                             <br/>
-                            <Drawing/>
+                                <div className={styles["latest-work"]}>
+                                    <Drawing/>
+                                </div>                            
                         </div>
                     </div>
                     <div className={styles["right-content"]}>
                         {/*Right Content*/}
                         <div className={styles["info-modal"]}>
                             <h2 className={styles["better-header"]}>Current Areas of Focus</h2>
-                            <p>Each day, draw something new based on a random prompt and upload it here. Over time, you
-                                can see how your drawing has improved!</p>
+                            <p></p>
                             <br/>
-                            <Button text={"Create Account"}/>
                         </div>
                     </div>
                 </div>
-            </main>
-            <div className="row">
-                <div className="box">
-                    <div className="column">
-                        <h2>Most Recent Prompts</h2>
-                        <Carousel/>
+                <div className={styles.container}>                
+                    <div className={styles["info-modal-lower"]}>
+                    <div className="box">
+                        <div className="column">
+                            <h2>Library</h2>
+                            <p>View and edit previous works, manage versions, or track progress</p>
+                            <Carousel/>
+                        </div>
                     </div>
                 </div>
             </div>
+            </div>
+            </main>
             <Footer/>
         </div>
     );

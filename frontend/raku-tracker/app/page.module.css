@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Kreon:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kreon:wght@300..700&family=Mitr:wght@200;300;400;500;600;700&display=swap');
 
+
+.outer-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .container {
     display: flex;
 }
@@ -34,6 +41,14 @@
     padding: 6.75% 5% 1% 3%;
 }
 
+.left-content-small {
+    flex: 1.9; /* Takes up 2/3 of the container */
+    /*background-color: #f0f0f0;*/
+    padding: 1% 10% 3% 5%;
+}
+
+
+
 .info-modal {
     background-color: #0E0019;
     border-radius: 10%;
@@ -46,10 +61,25 @@
     font-size: x-large;
 }
 
+.info-modal-lower {
+    background-color: #0E0019;
+    border-radius: 2%;
+    padding: 2%;
+    font-family: 'Mitr', serif;
+    font-weight: 300;
+}
+
 .centered {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 50px;
+}
+
+.latest-work
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
