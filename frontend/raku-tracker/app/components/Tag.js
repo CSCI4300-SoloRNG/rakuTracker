@@ -9,7 +9,9 @@ const Tag = (props) => {
             style={{backgroundColor: props.color}}
             type={'button'}
         >
-        {props.text}
+            <div className={'tag-text'}>
+            {props.text}
+            </div>
         </button>
     );
 }

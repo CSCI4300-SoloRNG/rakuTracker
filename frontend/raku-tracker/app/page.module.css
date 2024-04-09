@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kreon:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kreon:wght@300..700&family=Mitr:wght@200;300;400;500;600;700&display=swap');
 
-
 .tag-container {
     display: flex;
     flex-wrap: wrap;
@@ -38,27 +37,32 @@
     font-family: 'Mitr', serif;
     font-weight: 600;
     font-size: 3vw;
-    line-height: 90%;
+    line-height: 75%;
 }
 
 .left-content {
-    flex: 1.9; /* Takes up 2/3 of the container */
+    flex: 1.8; /* Takes up 2/3 of the container */
     /*background-color: #f0f0f0;*/
-    padding: 1% 1% 3% 5%;
+    padding: 0% 0% 3% 8%;
 }
 
 .right-content {
     flex: 1.1; /* Takes up 1/3 of the container */
     /*background-color: #dcdcdc;*/
-    padding: 6.75% 5% 1% 3%;
+    padding: 7.75% 7% 1% 3%;
 }
 
 .left-content-small {
-    flex: 1.9; /* Takes up 2/3 of the container */
+    flex: 1.8; /* Takes up 2/3 of the container */
     /*background-color: #f0f0f0;*/
-    padding: 1% 10% 3% 5%;
+    padding: 0% 0% 3% 5%;
 }
 
+.right-content-main {
+    flex: 1.3; /* Takes up 1/3 of the container */
+    /*background-color: #dcdcdc;*/
+    padding: 10.75% 5% 1% 0%;
+}
 
 .info-modal {
     background-color: #0E0019;
@@ -92,7 +96,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
+
+.latest-work .meta-overlay {
+    padding: 8px 16px;
+    background-color: #352d41cf;
+    text-align: left;
+    text-decoration: none;
+    display: block;
+    width: 80%;
+    font-size: 2.0vw;
+    margin: 0;
+    cursor: pointer;
+    border: none;
+    color: #ffffff;
+    border-radius: 8px;
+    font-family: 'Mitr';
+    transform: translate(-9%, -200%);
+    backdrop-filter: blur(1px);
+  }
 
 .centered-column {
     display: flex;
