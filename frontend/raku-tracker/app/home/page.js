@@ -25,7 +25,7 @@ export default function Home() {
                                 </div>                            
                         </div>
                     </div>
-                    <div className={styles["right-content"]}>
+                    <div className={styles["right-content-main"]}>
                         {/*Right Content*/}
                         <div className={styles["info-modal"]}>
                             <h2 className={styles["better-header"]}>Current Areas of Focus</h2>
