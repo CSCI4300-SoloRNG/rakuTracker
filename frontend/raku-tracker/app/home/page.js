@@ -10,7 +10,7 @@ export default function Home() {
 
     return (
         <div>
-            <Header login={false} createAccount={false}/>
+            <Header login={false} createAccount={false} upload={true} logout={true}/>
             <main>
             <div className={styles["outer-container"]}>
                 <div className={styles.container}>

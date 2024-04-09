@@ -8,7 +8,7 @@ import SmallButton from "@/app/components/SmallButton";
 export default function Login() {
     return (
         <div>
-            <Header login={false} createAccount={false}/>
+            <Header login={false} createAccount={false} upload={false} logout={false}/>
             <div className={styles.centered}>
                 <h1 className={styles["better-header-large"]}>Log in to your account.</h1>
                 <form>
