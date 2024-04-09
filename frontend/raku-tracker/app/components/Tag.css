@@ -1,0 +1,14 @@
+.tag {
+    padding: 8px 16px;
+    background-color: #38798d;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    margin: 0;
+    cursor: pointer;
+    border: none;
+    color: #bae2ff;
+    border-radius: 8px;
+    font-family: 'Mitr';
+}

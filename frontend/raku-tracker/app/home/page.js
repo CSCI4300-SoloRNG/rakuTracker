@@ -3,7 +3,7 @@ import styles from "@/app/page.module.css";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import Drawing from "@/app/components/Drawing";
-import Button from "@/app/components/Button";
+import Tag from "@/app/components/Tag";
 import Carousel from "@/app/components/Carousel";
 
 export default function Home() {
@@ -29,7 +29,15 @@ export default function Home() {
                         {/*Right Content*/}
                         <div className={styles["info-modal"]}>
                             <h2 className={styles["better-header"]}>Current Areas of Focus</h2>
-                            <p></p>
+                            <div className={styles["tag-container"]}>
+                            <Tag text={"Debug Tag"}/>
+                            <Tag text={"Longer Debug Tag"} color={"#8d3872"}/>
+                            <Tag text={"Super Duper Long Debug Tag"} color={"#115e46"}/>
+                            <Tag text={"Debug Tag"}/>
+                            <Tag text={"Debug Tag"}/>
+                            <Tag text={"Debug Tag"}/>
+
+                            </div>
                             <br/>
                         </div>
                     </div>

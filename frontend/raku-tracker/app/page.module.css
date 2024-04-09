@@ -2,6 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Kreon:wght@300..700&family=Mitr:wght@200;300;400;500;600;700&display=swap');
 
 
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.tag-container>* {
+    max-height: 50px;
+}
+
 .outer-container {
     display: flex;
     flex-direction: column;
