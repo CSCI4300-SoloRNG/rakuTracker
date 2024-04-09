@@ -10,7 +10,7 @@ const Header = props => {
     return (
         <header>
             <h1 className="header-title">rakuTracker</h1>
-            <SmallButton onClick={() => router.push('/home')} text={"Login"}/>
+            <SmallButton onClick={() => router.push('/account/login')} text={"Login"}/>
         </header>
     );
 };
