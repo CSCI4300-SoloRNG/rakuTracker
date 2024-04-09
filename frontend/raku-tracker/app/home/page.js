@@ -10,7 +10,7 @@ export default function Home() {
 
     return (
         <div>
-            <Header login={false} createAccount={false}/>
+            <Header/>
             <main>
             <div className={styles["outer-container"]}>
                 <div className={styles.container}>
@@ -30,7 +30,13 @@ export default function Home() {
                         <div className={styles["info-modal"]}>
                             <h2 className={styles["better-header"]}>Current Areas of Focus</h2>
                             <div className={styles["tag-container"]}>
-                            <Tag text={"Debug Tag 1"}/>
+                            <Tag text={"Debug Tag"}/>
+                            <Tag text={"Longer Debug Tag"} color={"#8d3872"}/>
+                            <Tag text={"Super Duper Long Debug Tag"} color={"#115e46"}/>
+                            <Tag text={"Debug Tag"}/>
+                            <Tag text={"Debug Tag"}/>
+                            <Tag text={"Debug Tag"}/>
+
                             </div>
                             <br/>
                         </div>

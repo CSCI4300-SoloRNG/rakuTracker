@@ -6,10 +6,12 @@
     display: flex;
     flex-wrap: wrap;
     height: 100%;
+    column-gap: 10px;
+    row-gap: 10px;
 }
 
 .tag-container>* {
-    flex: 1 1 160px;
+    max-height: 50px;
 }
 
 .outer-container {
