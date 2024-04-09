@@ -16,18 +16,16 @@ export default function Upload() {
                 <h1 className={`${styles["better-leader-large"]} ${styles["centered"]}`}>Upload</h1>
 
                 {/**/}
-                <div className={styles["row"]}>
+                <div className={styles["middle-aligned-row"]}>
 
                     {/*preview, upload button*/}
-                    <div className={styles["column"]}>
-                        <h2 className={`${styles["better-header"]} ${styles["centered"]}`}>Preview</h2>
+                    <div className={styles["centered-column"]}>
+                        <h2 className={`${styles["better-header"]}`}>Preview</h2>
                         <Drawing/>
-                        <br/>
-                        <SmallButton text="Pick Image"/>
                     </div>
 
                     {/*Form (Prompt, Tags, Time)*/}
-                    <div className={styles["column"]}>
+                    <div className={styles["left-aligned-column"]}>
                         <h2 className={styles["better-header"]}>Details</h2>
                         <form>
                             <label>
@@ -47,10 +45,13 @@ export default function Upload() {
                                 <input type="text" name="time"/>
                             </label>
                         </form>
+                        <br/>
+                        <SmallButton text="Pick Image"/>
+                        <br/>
+                        <SmallButton text="Upload" target={"/home"}/>
                     </div>
                 </div>
 
-                <Button text="Upload" target={"/home"}/>
             </main>
             <Footer/>
         </div>

@@ -10,7 +10,7 @@
     row-gap: 10px;
 }
 
-.tag-container>* {
+.tag-container > * {
     max-height: 50px;
 }
 
@@ -94,15 +94,25 @@
     align-items: center;
 }
 
-.row {
+.centered-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-aligned-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.middle-aligned-row {
     display: flex;
     flex: 1;
     margin-top: 10px;
     margin-bottom: 10px;
-}
-
-.column {
-    flex: 1;
-    overflow: hidden;
-    position: relative;
+    flex-direction: row;
+    justify-content: left;
 }
