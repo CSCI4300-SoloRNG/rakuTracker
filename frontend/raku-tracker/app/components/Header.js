@@ -4,10 +4,12 @@ import './Header.css';
 import SmallButton from './SmallButton';
 
 const Header = props => {
+
     return (
         <header>
             <h1 className="header-title">rakuTracker</h1>
-            <SmallButton target={'/account/login'} text={"Login"}/>
+            {props.login && <SmallButton target={'/account/login'} text={"Login"}/>}
+            {props.createAccount && <SmallButton target={'/account/create'} text={"Create Account"}/>}
         </header>
     );
 };

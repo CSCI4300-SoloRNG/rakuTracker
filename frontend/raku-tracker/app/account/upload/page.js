@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+import styles from "../../page.module.css";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import Drawing from "@/app/components/Drawing";
@@ -18,13 +18,14 @@ export default function Upload() {
                         <Drawing/>
                     </div>
                     <div className="column">
-                        <div className="box">
-                            <h2>How it works</h2>
+                        {/*Right Content*/}
+                        <div className={styles["info-modal"]}>
+                            <h2 className={styles["better-header"]}>How it works</h2>
                             <p>Each day, draw something new based on a random prompt and upload it here. Over time, you
-                                can
-                                see how your drawing has improved!</p>
+                                can see how your drawing has improved!</p>
+                            <br/>
+                            <Button text={"Create Account"}/>
                         </div>
-                        <Button text={"Create Account"}/>
                     </div>
                 </div>
                 <div className="row">
