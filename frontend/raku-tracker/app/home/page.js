@@ -21,7 +21,8 @@ export default function Home() {
                             <h1 className={styles["better-header-large"]}>Latest Work</h1>
                             <br/>
                                 <div className={styles["latest-work"]}>
-                                    <Drawing/>
+                                <div><Drawing/></div>
+                                <button className={styles["meta-overlay"]}>Date・Title・Prompt</button>
                                 </div>                            
                         </div>
                     </div>
@@ -36,7 +37,6 @@ export default function Home() {
                             <Tag text={"Debug Tag"}/>
                             <Tag text={"Debug Tag"}/>
                             <Tag text={"Debug Tag"}/>
-
                             </div>
                             <br/>
                         </div>
