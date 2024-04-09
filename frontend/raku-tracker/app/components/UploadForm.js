@@ -2,7 +2,7 @@
 import React, {useState} from 'react';
 import SmallButton from "@/app/components/SmallButton";
 
-const UploadForm = ({onUpload}) => {
+const UploadForm = ({onUpload, onImageSelect}) => {
     const [img, setImg] = useState('');
     const [prompt, setPrompt] = useState('');
     const [tags, setTags] = useState('');
@@ -60,7 +60,14 @@ const UploadForm = ({onUpload}) => {
                 />
             </label>
             <br/>
-            <SmallButton text="Pick Image"/>
+            <SmallButton text="Pick Image" onClick={
+                () => {
+                    let placeholderImage = "https://media.discordapp.net/attachments/1219746451131994176/1227084034081820724/image.png?ex=66271e0f&is=6614a90f&hm=3bc154f9743e986c7b6b9fa4a6f07b60c6b785c3f12900c40585e7cd377e358a&=&format=webp&quality=lossless&width=1380&height=1342";
+                    setImg(placeholderImage);
+                    console.log(`Pick Image: setting img to ${placeholderImage}`);
+                    onImageSelect(placeholderImage);
+                }
+            }/>
             <br/>
             <SmallButton type="submit" text="Upload" target={"/home"}/>
         </form>
