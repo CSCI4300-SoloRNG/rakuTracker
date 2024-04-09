@@ -9,7 +9,7 @@ export default function Home() {
 
     return (
         <div>
-            <Header/>
+            <Header login={true} createAccount={false}/>
             <main>
                 <div className={styles.container}>
                     <div className={styles["left-content"]}>
