@@ -5,7 +5,7 @@ import {useRouter} from "next/navigation";
 
 const Button = props => {
     const router = useRouter();
-    const newOnClick = props.onClick || (() => router.push(props.target));
+    const newOnClick = props.target ? props.onClick || (() => router.push(props.target)) : props.onClick;
     return (
         <button
             className="button"
