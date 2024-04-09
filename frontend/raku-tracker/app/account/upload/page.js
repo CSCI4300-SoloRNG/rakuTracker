@@ -21,7 +21,9 @@ export default function Upload() {
                     {/*preview, upload button*/}
                     <div className={styles["centered-column"]}>
                         <h2 className={`${styles["better-header"]}`}>Preview</h2>
-                        <Drawing/>
+                        <div>
+                            <Drawing/>
+                        </div>
                     </div>
 
                     {/*Form (Prompt, Tags, Time)*/}
