@@ -1,6 +1,7 @@
 "use client"
 import React, {useState} from 'react';
 import SmallButton from "@/app/components/SmallButton";
+import FilePickerButton from "@/app/components/FilePickerButton";
 
 const UploadForm = ({onUpload, onImageSelect}) => {
     const [img, setImg] = useState('');
@@ -60,12 +61,13 @@ const UploadForm = ({onUpload, onImageSelect}) => {
                 />
             </label>
             <br/>
-            <SmallButton text="Pick Image" onClick={
-                () => {
-                    let placeholderImage = "https://media.discordapp.net/attachments/1219746451131994176/1227084034081820724/image.png?ex=66271e0f&is=6614a90f&hm=3bc154f9743e986c7b6b9fa4a6f07b60c6b785c3f12900c40585e7cd377e358a&=&format=webp&quality=lossless&width=1380&height=1342";
-                    setImg(placeholderImage);
-                    console.log(`Pick Image: setting img to ${placeholderImage}`);
-                    onImageSelect(placeholderImage);
+            <FilePickerButton  text="Pick Image" onChange={
+                (e) => {
+                    let image = e.target.files[0];
+                    let imageURL = URL.createObjectURL(image);
+                    setImg(imageURL);
+                    console.log(`Pick Image: setting img to ${imageURL}`);
+                    onImageSelect(imageURL);
                 }
             }/>
             <br/>

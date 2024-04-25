@@ -2,7 +2,7 @@ import React from 'react';
 import './Drawing.css';
 
 const Drawing = props => {
-    // props.img props.prompt props.tags promps.time
+    // props.img props.prompt props.tags prompts.time
     return (
         <div className="drawing">
             <img
