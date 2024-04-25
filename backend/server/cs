@@ -1,0 +1,42 @@
+bool VerifyIndependentSet(Graph G, int k, List<int> V_prime)
+{
+    // Check if the size of V' == k
+    if (V_prime.Count != k)
+        return false;
+
+    // Check if all vertices in V' are in G
+    foreach (int vertex in V_prime)
+    {
+        if (!G.Vertices.Contains(vertex))
+            return false;
+    }
+
+    // Check if V' is independent
+    foreach (int u in V_prime)
+    {
+        foreach (int v in V_prime)
+        {
+            if (u != v && G.Edges.Contains(new Edge(u, v)))
+                return false;
+        }
+    }
+    return true;
+}
+
+class Graph
+{
+    public HashSet<int> Vertices { get; set; }
+    public HashSet<Edge> Edges { get; set; }
+}
+
+class Edge
+{
+    public int Vertex1 { get; set; }
+    public int Vertex2 { get; set; }
+
+    public Edge(int u, int v)
+    {
+        Vertex1 = u;
+        Vertex2 = v;
+    }
+}
