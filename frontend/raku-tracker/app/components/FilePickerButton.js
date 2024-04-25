@@ -8,6 +8,7 @@ const FilePickerButton = props => {
             type="file"
             onChange={props.onChange}
             className="small-button"
+            accept="image/*"
         >
         </input>
     );

@@ -2,6 +2,7 @@
 import React, {useState} from 'react';
 import SmallButton from "@/app/components/SmallButton";
 import FilePickerButton from "@/app/components/FilePickerButton";
+import Drawing from "@/app/components/Drawing";
 
 const UploadForm = ({onUpload, onImageSelect}) => {
     const [img, setImg] = useState('');
@@ -12,6 +13,7 @@ const UploadForm = ({onUpload, onImageSelect}) => {
 
     const submitHandler = (event) => {
         event.preventDefault();
+        // TODO verify inputs
         console.log("submitHandler");
         if (prompt.trim().length === 0) {
             return;
