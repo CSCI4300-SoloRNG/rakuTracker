@@ -2,7 +2,6 @@
 import React, {useState} from 'react';
 import SmallButton from "@/app/components/SmallButton";
 import FilePickerButton from "@/app/components/FilePickerButton";
-import Drawing from "@/app/components/Drawing";
 
 const UploadForm = ({onUpload, onImageSelect}) => {
     const [img, setImg] = useState('');
@@ -63,7 +62,7 @@ const UploadForm = ({onUpload, onImageSelect}) => {
                 />
             </label>
             <br/>
-            <FilePickerButton  text="Pick Image" onChange={
+            <FilePickerButton text="Pick Image" onChange={
                 (e) => {
                     let image = e.target.files[0];
                     let imageURL = URL.createObjectURL(image);

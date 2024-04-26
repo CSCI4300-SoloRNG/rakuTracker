@@ -3,7 +3,6 @@ import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import Button from "@/app/components/Button";
 import styles from "@/app/page.module.css";
-import SmallButton from "@/app/components/SmallButton";
 import {authenticate} from "@/app/components/BackendInterface";
 
 function onSubmitHandler(event) {

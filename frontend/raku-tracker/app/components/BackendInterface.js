@@ -1,8 +1,7 @@
 // interface for communicating with the backend
 "use client"
 import axios from 'axios';
-import Drawing from './Drawing';
-import { getCookie, setCookie, getCookies } from 'cookies-next'
+import {getCookie} from 'cookies-next'
 
 
 function blobUrlToFile(blobUrl) {
@@ -43,24 +42,26 @@ export async function authenticate(username, password) {
         // TODO check response from server.
 
         // TODO this is placeholder!!!
-        response = {"data": {"token": "1234567890"}};
+        response = {"ok": true, "data": {"token": "1234567890"}};
     } catch (e) {
         // if error, catch and return false.
         console.log(e);
         return false;
     }
 
-    // if success, store token and return true
-
-    let token = response.data.token;
-    // TODO may need httponly, secure, samesite. may also need to change maxage or use expires
-    document.cookie = `auth_token=${token}; path=/; max-age=86400;`;
-    return true;
+    if (response.ok && response.data.token !== undefined) {
+        // if success, store token and return true
+        // TODO may need httponly, secure, samesite. may also need to change maxage or use expires
+        document.cookie = `auth_token=${response.data.token}; path=/; max-age=86400;`;
+        return true;
+    } else {
+        return false;
+    }
 }
 
-export async function isLoggedIn(){
+export async function isLoggedIn() {
     // TODO send auth request to backend
     //TODO placeholder
-    let response = getCookie("auth_token") !== undefined;
-    return response;
+    let response = {"ok": getCookie("auth_token") !== undefined};
+    return response.ok;
 }
