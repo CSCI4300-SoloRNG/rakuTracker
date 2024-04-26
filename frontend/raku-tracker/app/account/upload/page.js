@@ -8,7 +8,7 @@ import Button from "@/app/components/Button";
 import Carousel from "@/app/components/Carousel";
 import SmallButton from "@/app/components/SmallButton";
 import UploadForm from "@/app/components/UploadForm";
-import uploadDrawing from "@/app/components/BackendInterface";
+import {uploadDrawing, authenticate} from "@/app/components/BackendInterface";
 
 export default function Upload() {
     const [drawingUrl, setDrawingUrl] = useState([]);

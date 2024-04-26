@@ -12,7 +12,14 @@ const Header = props => {
                 {props.login && <SmallButton target={'/account/login'} text={"Login"}/>}
                 {props.createAccount && <SmallButton target={'/account/create'} text={"Create Account"}/>}
                 {props.upload && <SmallButton target={'/account/upload'} text={"Upload"}/>}
-                {props.logout && <SmallButton target={'/'} text={"Logout"}/>/*TODO - Implement logout*/}
+                {props.logout && <SmallButton target={'/'} text={"Logout"} onClick={
+                    () => {
+                        // clear token cookie
+                        document.cookie = "auth_token=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
+                        // refresh page
+                        location.assign("/");
+                    }
+                }/>}
             </div>
         </header>
     );
