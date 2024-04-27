@@ -7,7 +7,7 @@ const Drawing = props => {
         <div className="drawing">
             <img
                 src={props.img ? props.img :
-                    "https://media.discordapp.net/attachments/274311798646374401/1219887367721320509/tumblr_ntrb8rAsbv1qecd9qo6_1280.jpg?ex=662beae4&is=662a9964&hm=8c2293bb32d422426063edfece16df3f9ae6f528b54bbde1eea6b71c0c7c1bd9&"}
+                    "https://cdn.discordapp.com/attachments/1008460812710596668/1233141115100860500/rakutrackerSplash.png?ex=662c03a8&is=662ab228&hm=70ab7a90846afd238cf200fc7f0cf2e4c9865aa766e1a4c99f9091d9a996ad29&"}
                 alt="placeholder image"/>
         </div>
     );

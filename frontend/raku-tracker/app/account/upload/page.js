@@ -10,7 +10,7 @@ import {uploadDrawing} from "@/app/components/BackendInterface";
 export default function Upload() {
     const [drawingUrl, setDrawingUrl] = useState([]);
     const [initialDrawingUrl, setInitialDrawingUrl] = useState([
-        "https://media.discordapp.net/attachments/274311798646374401/1219887367721320509/tumblr_ntrb8rAsbv1qecd9qo6_1280.jpg?ex=661f64a4&is=660cefa4&hm=413f06ac8c5951704ea63afcff0b8978e410969fbe0d2a8e784ebee18aabf3a3&=&format=webp&width=902&height=662"
+        "https://cdn.discordapp.com/attachments/1008460812710596668/1233141115100860500/rakutrackerSplash.png?ex=662c03a8&is=662ab228&hm=70ab7a90846afd238cf200fc7f0cf2e4c9865aa766e1a4c99f9091d9a996ad29&"
     ]);
 
     const uploadHandler = (data) => {
