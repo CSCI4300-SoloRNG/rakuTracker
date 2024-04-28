@@ -11,7 +11,7 @@ const Header = props => {
             <div className={"buttons"}>
                 {props.login && <SmallButton target={'/account/login'} text={"Login"}/>}
                 {props.createAccount && <SmallButton target={'/account/create'} text={"Create Account"}/>}
-                {props.upload && <SmallButton target={'/account/upload'} text={"Upload"}/>}
+                {props.upload && <SmallButton target={'/drawing/upload'} text={"Upload"}/>}
                 {props.logout && <SmallButton text={"Logout"} onClick={
                     () => {
                         // clear token cookie
