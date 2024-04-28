@@ -8,9 +8,9 @@ import {authenticate, createAccount} from "@/app/components/BackendInterface";
 function onSubmitHandler(event) {
     // when the user clicks login
     event.preventDefault();
-    console.log(`Creating account as ${event.target.username.value}, password: ${event.target.password.value}`);
+    console.log(`Creating account as email: ${event.target.email.value}, username: ${event.target.username.value}, password: ${event.target.password.value}`);
     // TODO verify inputs
-    createAccount(event.target.username.value, event.target.password.value).then(r => {
+    createAccount(event.target.email.value, event.target.username.value, event.target.password.value).then(r => {
         if (r) {
             console.log("Account creation successful");
             location.assign("/account/login") // redirect to login page
@@ -31,6 +31,12 @@ export default function CreateAccount() {
             <div className={styles.centered}>
                 <h1 className={styles["better-header-large"]}>Create an account.</h1>
                 <form onSubmit={onSubmitHandler}>
+                    <label>
+                        Email:&nbsp;
+                        <input type="email" name="email"/>
+                    </label>
+                    <br/>
+                    <br/>
                     <label>
                         Username:&nbsp;
                         <input type="text" name="username"/>

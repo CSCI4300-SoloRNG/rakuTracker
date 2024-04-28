@@ -60,7 +60,7 @@ export async function authenticate(username, password) {
     }
 }
 
-export async function createAccount(username, password) {
+export async function createAccount(email, username, password) {
     let response;
     try {
         // TODO send username and password to server
