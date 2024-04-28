@@ -15,8 +15,16 @@ export default function Upload() {
 
     const uploadHandler = (data) => {
         console.log("uploadHandler");
-        // TODO upload drawing to server
-        uploadDrawing(data);
+        uploadDrawing(data).then(r => {
+            console.log(r);
+            location.assign("/")
+            // TODO show success message?
+            return r;
+        }).catch(e => {
+            console.log(e);
+            // TODO show error message
+            return false;
+        });
         console.log(data);
     };
 
