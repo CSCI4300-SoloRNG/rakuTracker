@@ -7,7 +7,7 @@ const dotenv = require('dotenv').config();
 
 app.use(cors({origin: true, credentials: true }));
 const drawings = require('./routes/api/drawing');
-app.use('/s', drawings);
+app.use('/api/drawing', drawings);
 
 const conn_str = process.env.CONN_STR;
 mongoose.set('strictQuery', false);
