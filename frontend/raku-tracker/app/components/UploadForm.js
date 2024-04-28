@@ -57,7 +57,7 @@ const UploadForm = ({onUpload, onImageSelect}) => {
             <label>
                 Time:&nbsp;&nbsp;&nbsp;&nbsp;
                 <input
-                    type="text"
+                    type="datetime-local"
                     name="time"
                     id="time"
                     value={time}

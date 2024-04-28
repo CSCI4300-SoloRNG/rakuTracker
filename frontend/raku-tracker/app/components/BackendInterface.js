@@ -14,9 +14,7 @@ function blobUrlToFile(blobUrl) {
 export async function uploadDrawing(drawing) {
     console.log("uploadDrawing");
     console.log(drawing);
-
-
-    const response = await axios.post(
+    axios.post(
         "http://localhost:42069/api/drawing", {
             url: drawing.img,
             time: drawing.time,
@@ -27,9 +25,15 @@ export async function uploadDrawing(drawing) {
                 "Content-Type": "application/json; charset=utf-8"
             }
         }
-    );
-    console.log(response.data);
-    return response.data;
+    ).then(response => {
+       console.log(response);
+       // TODO return ID?
+       return response.status === 200;
+    }).catch(error => {
+        console.log(error);
+        //TODO error page
+        return false;
+    });
 }
 
 export async function authenticate(username, password) {
