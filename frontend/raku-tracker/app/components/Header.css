@@ -16,4 +16,5 @@ header .buttons {
 .header-title {
     font-family: 'Kreon', serif;
     margin: 0;
+    cursor:pointer;
 }

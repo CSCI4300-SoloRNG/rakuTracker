@@ -7,7 +7,7 @@ const Header = props => {
 
     return (
         <header>
-            <h1 className="header-title">rakuTracker</h1>
+            <h1 className="header-title" onClick={() => location.assign("/")}>rakuTracker</h1>
             <div className={"buttons"}>
                 {props.login && <SmallButton target={'/account/login'} text={"Login"}/>}
                 {props.createAccount && <SmallButton target={'/account/create'} text={"Create Account"}/>}
