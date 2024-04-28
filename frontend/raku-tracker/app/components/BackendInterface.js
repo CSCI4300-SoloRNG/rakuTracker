@@ -37,11 +37,9 @@ export async function uploadDrawing(drawing) {
 }
 
 export async function authenticate(username, password) {
-    // TODO hash username and password
-
     let response;
     try {
-        // TODO send hashed username and password to server
+        // TODO send username and password to server
         // TODO check response from server.
 
         // TODO this is placeholder!!!
@@ -60,6 +58,23 @@ export async function authenticate(username, password) {
     } else {
         return false;
     }
+}
+
+export async function createAccount(username, password) {
+    let response;
+    try {
+        // TODO send username and password to server
+        // TODO check response from server.
+
+        // TODO this is placeholder!!!
+        response = {"ok": true};
+    } catch (e) {
+        // if error, catch and return false.
+        console.log(e);
+        return false;
+    }
+
+    return response.ok;
 }
 
 export async function isLoggedIn() {

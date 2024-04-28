@@ -7,7 +7,7 @@ import {isLoggedIn} from "@/app/components/BackendInterface";
 
 export default function NotFoundPage() {
     // TODO const authenticated = isLoggedIn().then();
-    const authenticated = true;
+    const authenticated = false;
     return (
         <div>
             {authenticated ? <Header login={false} createAccount={false} upload={true} logout={true}/> :

@@ -3,30 +3,33 @@ import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import Button from "@/app/components/Button";
 import styles from "@/app/page.module.css";
-import {authenticate} from "@/app/components/BackendInterface";
+import {authenticate, createAccount} from "@/app/components/BackendInterface";
 
 function onSubmitHandler(event) {
     // when the user clicks login
     event.preventDefault();
-    console.log(`Logging in as ${event.target.username.value}, password: ${event.target.password.value}`);
+    console.log(`Creating account as ${event.target.username.value}, password: ${event.target.password.value}`);
     // TODO verify inputs
-    authenticate(event.target.username.value, event.target.password.value).then(r => {
+    createAccount(event.target.username.value, event.target.password.value).then(r => {
         if (r) {
-            console.log("Login successful");
-            location.assign("/") // redirect to home page
+            console.log("Account creation successful");
+            location.assign("/account/login") // redirect to login page
         } else {
-            console.log("Login failed");
-            // display error message
+            console.log("Account creation failed");
+            // TODO handle error
         }
+    }).catch(e => {
+        console.log(e);
+        // TODO handle error
     });
 }
 
-export default function Login() {
+export default function CreateAccount() {
     return (
         <div>
             <Header login={false} createAccount={false} upload={false} logout={false}/>
             <div className={styles.centered}>
-                <h1 className={styles["better-header-large"]}>Log in to your account.</h1>
+                <h1 className={styles["better-header-large"]}>Create an account.</h1>
                 <form onSubmit={onSubmitHandler}>
                     <label>
                         Username:&nbsp;
@@ -36,15 +39,15 @@ export default function Login() {
                     <br/>
                     <label>
                         Password:&nbsp;&nbsp;
-                        <input type="text" name="password"/>
+                        <input type="password" name="password"/>
                     </label>
                     <br/>
                     <br/>
-                    <Button text="Login" type="submit"/>
+                    <Button text="Sign Up" type="submit"/>
                     <br/>
                     <br/>
-                    Don't have an account?
-                    <Button text="Create Account"/>
+                    Already have an account?
+                    <Button text="Login to existing account" target="/account/login"/>
                 </form>
             </div>
             <Footer/>

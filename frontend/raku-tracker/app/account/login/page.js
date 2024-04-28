@@ -36,7 +36,7 @@ export default function Login() {
                     <br/>
                     <label>
                         Password:&nbsp;&nbsp;
-                        <input type="text" name="password"/>
+                        <input type="password" name="password"/>
                     </label>
                     <br/>
                     <br/>
@@ -44,7 +44,7 @@ export default function Login() {
                     <br/>
                     <br/>
                     Don't have an account?
-                    <Button text="Create Account"/>
+                    <Button text="Create Account" target="/account/create"/>
                 </form>
             </div>
             <Footer/>
