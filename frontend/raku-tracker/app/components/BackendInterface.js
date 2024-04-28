@@ -26,9 +26,36 @@ export async function uploadDrawing(drawing) {
             }
         }
     ).then(response => {
-       console.log(response);
-       // TODO return ID?
-       return response.status === 200;
+        console.log(response);
+        return response.status === 200;
+    }).catch(error => {
+        console.log(error);
+        //TODO error page
+        return false;
+    });
+}
+
+
+// upload drawing to database
+export async function editDrawing(drawing) {
+    console.log("editDrawing");
+    console.log(drawing);
+    axios.post(
+        //TODO edit url
+        "http://localhost:42069/api/drawing", {
+            url: drawing.img,
+            time: drawing.time,
+            prompt: drawing.prompt,
+            tags: drawing.tags
+            // TODO add ID
+        }, {
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            }
+        }
+    ).then(response => {
+        console.log(response);
+        return response.status === 200;
     }).catch(error => {
         console.log(error);
         //TODO error page

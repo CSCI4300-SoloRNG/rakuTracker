@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import SmallButton from "@/app/components/SmallButton";
 import FilePickerButton from "@/app/components/FilePickerButton";
 
-const UploadForm = ({onUpload, onImageSelect}) => {
+const UploadForm = ({onUpload, onImageSelect, showFilePicker}) => {
     const [img, setImg] = useState('');
     const [prompt, setPrompt] = useState('');
     const [tags, setTags] = useState('');
@@ -65,16 +65,17 @@ const UploadForm = ({onUpload, onImageSelect}) => {
                 />
             </label>
             <br/>
-            <FilePickerButton text="Pick Image" onChange={
-                (e) => {
-                    let image = e.target.files[0];
-                    let imageURL = URL.createObjectURL(image);
-                    setImg(imageURL);
-                    console.log(`Pick Image: setting img to ${imageURL}`);
-                    onImageSelect(imageURL);
-                }
-            }/>
-            <br/>
+            {showFilePicker &&
+                <FilePickerButton text="Pick Image" onChange={
+                    (e) => {
+                        let image = e.target.files[0];
+                        let imageURL = URL.createObjectURL(image);
+                        setImg(imageURL);
+                        console.log(`Pick Image: setting img to ${imageURL}`);
+                        onImageSelect(imageURL);
+                    }
+                }/> && <br/>
+            }
             <SmallButton type="submit" text="Upload" />
         </form>
     );
