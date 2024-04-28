@@ -15,17 +15,16 @@ export async function uploadDrawing(drawing) {
     console.log("uploadDrawing");
     console.log(drawing);
 
-    let formData = new FormData();
-    formData.append('img', blobUrlToFile(drawing.img));
-    formData.append('prompt', drawing.prompt);
-    formData.append('tags', drawing.tags);
-    formData.append('time', drawing.time);
-    formData.append('id', drawing.id);
 
     const response = await axios.post(
-        "http://localhost:42069/s/", formData, {
+        "http://localhost:42069/api/drawing", {
+            url: drawing.img,
+            time: drawing.time,
+            prompt: drawing.prompt,
+            tags: drawing.tags
+        }, {
             headers: {
-                'Content-Type': 'multipart/form-data'
+                "Content-Type": "application/json; charset=utf-8"
             }
         }
     );

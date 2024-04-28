@@ -19,6 +19,9 @@ const UploadForm = ({onUpload, onImageSelect}) => {
         }
         console.log("calling onUpload");
         onUpload({img, prompt, tags, time, id});
+
+        //TODO
+        location.assign("/") // redirect to home page
         setImg('');
         setPrompt('');
         setTags('');
@@ -72,7 +75,7 @@ const UploadForm = ({onUpload, onImageSelect}) => {
                 }
             }/>
             <br/>
-            <SmallButton type="submit" text="Upload" target={"/home"}/>
+            <SmallButton type="submit" text="Upload" />
         </form>
     );
 }
