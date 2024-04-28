@@ -5,7 +5,7 @@ const drawingSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  date: {
+  time: {
     type: String,
     required: true
   },
