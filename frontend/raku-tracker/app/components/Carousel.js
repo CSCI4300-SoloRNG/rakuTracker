@@ -11,7 +11,10 @@ const DrawingsContainer = () => {
 
     useEffect(() => {
         getDrawings().then(drawings => {
-            console.log(drawings);
+            console.log(`use effect: drawings: ${drawings}`);
+            if (drawings === undefined || drawings === null) {
+                drawings = [];
+            }
             setDrawings(drawings);
         });
     }, []);
