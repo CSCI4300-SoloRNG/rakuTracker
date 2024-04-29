@@ -68,7 +68,7 @@ export default function Edit({params}) {
                     <div className={styles["centered-column"]}>
                         <h2 className={`${styles["better-header"]}`}>Image</h2>
                         <div>
-                            <Drawing img={drawing.url}/>
+                            <Drawing url={drawing.url}/>
                         </div>
                     </div>
 

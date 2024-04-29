@@ -16,7 +16,7 @@ export async function uploadDrawing(drawing) {
     console.log(drawing);
     axios.post(
         "http://localhost:42069/api/drawing", {
-            url: drawing.img,
+            url: drawing.url,
             time: drawing.time,
             prompt: drawing.prompt,
             tags: drawing.tags
@@ -43,7 +43,7 @@ export async function editDrawing(drawing) {
     const response = axios.post(
         //TODO edit url
         "http://localhost:42069/api/drawing", {
-            url: drawing.img,
+            url: drawing.url,
             time: drawing.time,
             prompt: drawing.prompt,
             tags: drawing.tags

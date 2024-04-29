@@ -69,7 +69,7 @@ function unauthenticatedHomepage() {
                         <div className={styles["better-h1"]}>
                             <h1 className={styles["better-header-large"]}>Improve your drawing skills daily!</h1>
                             <br/>
-                            <Drawing img={"https://lh3.googleusercontent.com/drive-viewer/AKGpihYP_KEg2Tbfjo5ZefSLuwWh9XPUtmyXHAvrE5Bu2SNPIkoOprCHhPX0SUWrXK2dUzH5EH_0jH288tXucx13b7AsrjirCDOE_Q=s1600-rw-v1"}/>
+                            <Drawing url={"https://lh3.googleusercontent.com/drive-viewer/AKGpihYP_KEg2Tbfjo5ZefSLuwWh9XPUtmyXHAvrE5Bu2SNPIkoOprCHhPX0SUWrXK2dUzH5EH_0jH288tXucx13b7AsrjirCDOE_Q=s1600-rw-v1"}/>
                         </div>
                     </div>
                     <div className={styles["right-content"]}>

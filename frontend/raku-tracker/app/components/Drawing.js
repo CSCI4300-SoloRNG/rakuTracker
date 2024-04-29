@@ -3,10 +3,10 @@ import React from 'react';
 import './Drawing.css';
 
 const Drawing = props => {
-    // props.img props.prompt props.tags prompts.time
-    return props.img && props.img !== "" ? (
+    // props.url props.prompt props.tags prompts.time
+    return props.url && props.url !== "" ? (
         <div className="drawing" onClick={() => location.assign(`/drawing/edit/${props._id}`)}><img
-            src={props.img}
+            src={props.url}
             alt="your drawing"
         /></div>
     ) : (

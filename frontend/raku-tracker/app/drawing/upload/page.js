@@ -46,7 +46,7 @@ export default function Upload() {
                     <div className={styles["centered-column"]}>
                         <h2 className={`${styles["better-header"]}`}>Preview</h2>
                         <div>
-                            <Drawing img={drawingUrl}/>
+                            <Drawing url={drawingUrl}/>
                         </div>
                     </div>
 

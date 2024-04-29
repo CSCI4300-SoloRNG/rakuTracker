@@ -6,7 +6,7 @@ import FilePickerButton from "@/app/components/FilePickerButton";
 const UploadForm = ({onUpload, onImageSelect, showFilePicker, defaultPrompt, defaultTime, defaultTags}) => {
 
     console.log(`defaultPrompt: ${defaultPrompt}, defaultTime: ${defaultTime}, defaultTags: ${defaultTags}`);
-    const [img, setImg] = useState('');
+    const [url, setUrl] = useState('');
     const [prompt, setPrompt] = useState(defaultPrompt || '');
     const [tags, setTags] = useState(defaultTags || '');
     const [time, setTime] = useState(defaultTime || '');
@@ -25,9 +25,9 @@ const UploadForm = ({onUpload, onImageSelect, showFilePicker, defaultPrompt, def
             return;
         }
         console.log("calling onUpload");
-        onUpload({img, prompt, tags, time});
+        onUpload({url, prompt, tags, time});
 
-        setImg('');
+        setUrl('');
         setPrompt('');
         setTags('');
         setTime('');
@@ -78,9 +78,9 @@ const UploadForm = ({onUpload, onImageSelect, showFilePicker, defaultPrompt, def
                             type="url"
                             name="image"
                             id="image"
-                            value={img}
+                            value={url}
                             onChange={(event) => {
-                                setImg(event.target.value);
+                                setUrl(event.target.value);
                                 onImageSelect(event.target.value);
                             }
                             }
