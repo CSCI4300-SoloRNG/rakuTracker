@@ -5,7 +5,8 @@ const jwt = require('jsonwebtoken');
 
 module.exports = router;
 router.post('/', bodyParser.json(), (req, res) => {
-    const token = req.body.token;
+    console.log("token auth req");
+    const token = req.cookies.auth_token;
     try {
         const user = jwt.verify(token, process.env.MY_SECRET);
         res.status(200).json({user});
