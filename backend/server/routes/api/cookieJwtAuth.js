@@ -2,7 +2,9 @@ const express = require('express');
 const router = express.Router();
 const bodyParser = require("body-parser");
 const jwt = require('jsonwebtoken');
-ports.cookieJwtAuth = (req, res, next) => {
+module.exports = router;
+
+router.cookieJwtAuth = (req, res, next) => {
     const token = req.cookies.token;
     try {
         const user = jwt.verify(token, process.env.MY_SECRET);
