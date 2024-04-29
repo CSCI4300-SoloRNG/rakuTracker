@@ -1,6 +1,22 @@
-.drawing > img {
-    height: 85%;
-    width: 85%;
+.drawing {
+    aspect-ratio : 1 / 1;
+    max-width: 100%; /* Adjust width as needed */
+    position: relative; /* Ensure proper positioning for absolute elements */
+}
+
+.drawing:not(:has(>.fake-img)){
+    cursor:pointer;
+}
+
+.drawing > img, .drawing > .fake-img {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
     border-radius: 10%;
-    display: inline-block;
+}
+
+.drawing > .fake-img {
+    position: absolute;
+    background-color: #424242;
 }
