@@ -4,6 +4,9 @@ const port = process.env.PORT || 42069
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv').config();
+const cookieParser = require("cookie-parser");
+
+app.use(cookieParser());
 
 app.use(cors({origin: true, credentials: true }));
 const drawings = require('./routes/api/drawing');
