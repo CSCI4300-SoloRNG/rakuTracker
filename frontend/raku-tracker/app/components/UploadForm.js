@@ -73,15 +73,21 @@ const UploadForm = ({onUpload, onImageSelect, showFilePicker, defaultPrompt, def
             </label>
             <br/>
             {showFilePicker &&
-                <FilePickerButton text="Pick Image" onChange={
-                    (e) => {
-                        let image = e.target.files[0];
-                        let imageURL = URL.createObjectURL(image);
-                        setImg(imageURL);
-                        console.log(`Pick Image: setting img to ${imageURL}`);
-                        onImageSelect(imageURL);
-                    }
-                }/>
+                (
+                    <label>
+                        Image URL:&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input
+                            type="url"
+                            name="image"
+                            id="image"
+                            value={img}
+                            onChange={(event) => {
+                                setImg(event.target.value);
+                                onImageSelect(event.target.value);
+                            }
+                            }
+                        />
+                    </label>)
             }
             <br/><SmallButton type="submit" text={showFilePicker ? "Upload" : "Save"}/>
         </form>
