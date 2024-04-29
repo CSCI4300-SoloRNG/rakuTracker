@@ -85,6 +85,38 @@ export async function getDrawing(image_id) {
     });
 }
 
+export async function getDrawings(limit=5) {
+    console.log("getDrawings");
+    // TODO placeholder
+    return [
+        {
+            url:"https://www.w3schools.com/images/img_program_up_300.png",
+            prompt: "make an ad for w3 schools frontend certification program",
+            tags: ["w3schools", "frontend", "certification", "ad"],
+            time: "2022-01-01T12:00:00",
+            id: "1234567890"
+        },
+        {
+            url:"https://www.w3schools.com/images/img_program_up_300.png",
+            prompt: "make an ad for w3 schools frontend certification program",
+            tags: ["w3schools", "frontend", "certification", "ad"],
+            time: "2022-01-01T12:00:00",
+            id: "12344567890"
+        }
+    ];
+    axios.get(
+        `http://localhost:42069/api/drawing/`
+    ).then(response => {
+        console.log(response);
+        // TODO check if okay first
+        return response.data
+    }).catch(error => {
+        console.log(error);
+        //TODO error page
+        return false;
+    });
+}
+
 export async function authenticate(username, password) {
     let response;
     try {
