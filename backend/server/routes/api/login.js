@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../../models/user');
 
 module.exports = router;
-SECRET = "baka"
+SECRET = process.env.MY_SECRET
 
 
 const validate = async (req) => {
