@@ -1,5 +1,5 @@
 .drawing {
-    aspect-ratio : 1 / 1;
+    /*aspect-ratio : 1 / 1;*/
     max-width: 100%; /* Adjust width as needed */
     position: relative; /* Ensure proper positioning for absolute elements */
 }

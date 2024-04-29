@@ -19,5 +19,5 @@ const drawingSchema = new mongoose.Schema({
   }]
 });
 
-const Drawing = mongoose.models.Card || mongoose.model('Drawing', drawingSchema);
+const Drawing = mongoose.models.Drawing || mongoose.model('Drawing', drawingSchema);
 module.exports = Drawing;

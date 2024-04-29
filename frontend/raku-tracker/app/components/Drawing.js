@@ -12,7 +12,10 @@ const Drawing = props => {
                     alt="your drawing"
                 />
             ) : (
-                <div className="fake-img"></div>
+                <img
+                src={"https://lh3.googleusercontent.com/drive-viewer/AKGpihYP_KEg2Tbfjo5ZefSLuwWh9XPUtmyXHAvrE5Bu2SNPIkoOprCHhPX0SUWrXK2dUzH5EH_0jH288tXucx13b7AsrjirCDOE_Q=s1600-rw-v1"}
+                alt="your drawing"
+                />
             )}
         </div>
     );
