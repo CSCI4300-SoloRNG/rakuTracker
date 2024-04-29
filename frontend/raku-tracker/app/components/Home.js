@@ -79,7 +79,7 @@ function unauthenticatedHomepage() {
                             <p>Each day, draw something new based on a random prompt and upload it here. Over time, you
                                 can see how your drawing has improved!</p>
                             <br/>
-                            <Button text={"Create Account"}/>
+                            <Button text={"Create Account"} target={"/account/create"}/>
                         </div>
                     </div>
                 </div>
