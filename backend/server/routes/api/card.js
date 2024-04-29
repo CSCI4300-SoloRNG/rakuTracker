@@ -20,11 +20,7 @@ router.post('/', bodyParser.json(), (req, res) =>
 { 
     Card.create(req.body)
     .then((item)=>res.json({ msg: 'Item added successfully' }))
-    .catch((err)=>{
-        res.status(400).json({ error: 'Error' });
-        console.log(err);
-}
-        );
+    .catch((err)=>res.status(400).json({ error: 'Error' }));
 });
 
 router.put('/:id', (req, res) => {

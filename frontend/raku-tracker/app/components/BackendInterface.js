@@ -40,7 +40,7 @@ export async function uploadDrawing(drawing) {
 export async function editDrawing(drawing) {
     console.log("editDrawing");
     console.log(drawing);
-    const response = axios.put(
+    const response = await axios.put(
         `http://localhost:42069/api/drawing/${drawing._id}`, drawing, {
             headers: {
                 "Content-Type": "application/json; charset=utf-8"
