@@ -1,7 +1,7 @@
-import Drawing from "@/app/components/Drawing";
 import {getDrawings} from "@/app/components/BackendInterface";
 import {useEffect, useState} from "react";
 import './LatestWork.css';
+import DrawingWithBanner from "@/app/components/DrawingWithBanner";
 
 export default function LatestWork() {
     const [drawing, setDrawing] = useState({});
@@ -19,9 +19,5 @@ export default function LatestWork() {
         });
     }, []);
 
-    return (
-        <div className={"latest-work"}>
-            <Drawing _id={drawing._id} url={drawing.url}/>
-            <button className={"meta-overlay"}>Date・Title・Prompt</button>
-        </div>);
+    return (<div className={"latest-work"}><DrawingWithBanner drawing={drawing}/></div>);
 }

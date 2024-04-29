@@ -1,4 +1,5 @@
-.latest-work {
+.drawing-holder {
+
     display: flex;
     width: 100%;
     justify-content: center;
@@ -6,12 +7,7 @@
     flex-direction: column;
 }
 
-.latest-work .drawing {
-    flex: 1;
-    width: 50%;
-}
-
-.latest-work .meta-overlay {
+.meta-overlay {
     padding: 8px 16px;
     background-color: #352d41cf;
     text-align: left;

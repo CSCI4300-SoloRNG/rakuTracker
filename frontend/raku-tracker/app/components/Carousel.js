@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import './Carousel.css';
-import Drawing from './Drawing';
-import {getDrawings} from "@/app/components/BackendInterface"; // Import your Drawing component
+import {getDrawings} from "@/app/components/BackendInterface";
+import DrawingWithBanner from "@/app/components/DrawingWithBanner"; // Import your Drawing component
 
 const DrawingsContainer = () => {
-
 
     // Array of default drawing titles
     const [drawings, setDrawings] = useState([]);
@@ -25,9 +24,7 @@ const DrawingsContainer = () => {
     return (
         <div className="carousel">
             {/* Map over the array of default drawings and render Drawing components */}
-            {drawings.map((drawing) => (
-                <Drawing key={drawing._id} _id={drawing._id} url={drawing.url}/>
-            ))}
+            {drawings.map((drawing) => (<DrawingWithBanner drawing={drawing}/>))}
         </div>
     );
 };
