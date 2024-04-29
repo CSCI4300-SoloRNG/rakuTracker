@@ -15,7 +15,7 @@ export default function Upload() {
         console.log("uploadHandler");
         uploadDrawing(data).then(r => {
             console.log(r);
-            location.assign("/")
+            location.assign("/");
             // TODO show success message?
             return r;
         }).catch(e => {

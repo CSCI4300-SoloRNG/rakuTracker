@@ -27,8 +27,6 @@ const UploadForm = ({onUpload, onImageSelect, showFilePicker, defaultPrompt, def
         console.log("calling onUpload");
         onUpload({img, prompt, tags, time});
 
-        //TODO
-        location.assign("/") // redirect to home page
         setImg('');
         setPrompt('');
         setTags('');
