@@ -12,7 +12,7 @@ export default function DrawingWithBanner(props) {
         <div className={"drawing-holder"}>
             <Drawing url={props.drawing.url} _id={props.drawing._id}/>
             <button className={"meta-overlay"}>
-                {`${convertDateString(props.drawing.time)}`}<br/>{`${props.drawing.prompt}`}
+                {`${convertDateString(props.drawing.time)}`}<br/>{`"${props.drawing.prompt}"`}
             </button>
         </div>
     )
