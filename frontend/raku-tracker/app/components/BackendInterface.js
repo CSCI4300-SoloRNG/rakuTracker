@@ -65,13 +65,6 @@ export async function editDrawing(drawing) {
 
 export async function getDrawing(image_id) {
     console.log("getDrawing");
-    // TODO placeholder
-    return {
-        url:"https://www.w3schools.com/images/img_program_up_300.png",
-        prompt: "make an ad for w3 schools frontend certification program",
-        tags: ["w3schools", "frontend", "certification", "ad"],
-        time: "2022-01-01T12:00:00"
-    };
     axios.get(
         `http://localhost:42069/api/drawing/${image_id}`
     ).then(response => {
@@ -85,25 +78,9 @@ export async function getDrawing(image_id) {
     });
 }
 
-export async function getDrawings(limit=5) {
+export async function getDrawings(limit = 5) {
     console.log("getDrawings");
-    // TODO placeholder
-    return [
-        {
-            url:"https://www.w3schools.com/images/img_program_up_300.png",
-            prompt: "make an ad for w3 schools frontend certification program",
-            tags: ["w3schools", "frontend", "certification", "ad"],
-            time: "2022-01-01T12:00:00",
-            id: "1234567890"
-        },
-        {
-            url:"https://www.w3schools.com/images/img_program_up_300.png",
-            prompt: "make an ad for w3 schools frontend certification program",
-            tags: ["w3schools", "frontend", "certification", "ad"],
-            time: "2022-01-01T12:00:00",
-            id: "12344567890"
-        }
-    ];
+    // TODO apply limit
     axios.get(
         `http://localhost:42069/api/drawing/`
     ).then(response => {
@@ -119,26 +96,32 @@ export async function getDrawings(limit=5) {
 
 export async function authenticate(username, password) {
     let response;
-    try {
-        // TODO send username and password to server
-        // TODO check response from server.
+    // TODO send username and password to server
 
-        // TODO this is placeholder!!!
-        response = {"ok": true, "data": {"token": "1234567890"}};
-    } catch (e) {
-        // if error, catch and return false.
-        console.log(e);
-        return false;
-    }
+    axios.post("http://localhost:42069/api/login/", {
+        "username": username,
+        "password": password
+    }, {
+        headers: {
+            "Content-Type": "application/json; charset=utf-8"
+        }
+    }).then(response => {
+        console.log(response);
 
-    if (response.ok && response.data.token !== undefined) {
-        // if success, store token and return true
-        // TODO may need httponly, secure, samesite. may also need to change maxage or use expires
-        document.cookie = `auth_token=${response.data.token}; path=/; max-age=86400;`;
-        return true;
-    } else {
+        if (response.ok && response.data.token !== undefined) {
+            // if success, store token and return true
+            // TODO may need httponly, secure, samesite. may also need to change maxage or use expires
+            document.cookie = `auth_token=${response.data.token}; path=/; max-age=86400;`;
+            return true;
+        } else {
+            return false;
+        }
+    }).catch(error => {
+        console.log(error);
         return false;
-    }
+    })
+
+
 }
 
 export async function createAccount(email, username, password) {
@@ -160,7 +143,7 @@ export async function createAccount(email, username, password) {
 
 export async function isLoggedIn() {
     // TODO send auth request to backend
-    //TODO placeholder
+    // TODO placeholder
     let response = {"ok": getCookie("auth_token") !== undefined};
     return response.ok;
 }
