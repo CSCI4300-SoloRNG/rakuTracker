@@ -5,13 +5,13 @@ const Drawing = require('../../models/drawing');
 
 // Gets all items
 router.get('/', (req, res) => {
-    Drawing.find()
-        .then((items) => res.json(items))
-        .catch
-        ((err) => {
-            console.log(err);
-            res.status(404).json({noitemsfound: 'No Items found'})
-        });
+    Drawing.find().then((items) => {
+        console.log(`responding to get all drawings request with ${items}`);
+        res.json(items);
+    }).catch((err) => {
+        console.log(err);
+        res.status(404).json({noitemsfound: 'No Items found'})
+    });
 });
 
 // Get item by ID
