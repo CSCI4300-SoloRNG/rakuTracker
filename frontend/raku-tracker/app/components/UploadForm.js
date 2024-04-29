@@ -81,9 +81,9 @@ const UploadForm = ({onUpload, onImageSelect, showFilePicker, defaultPrompt, def
                         console.log(`Pick Image: setting img to ${imageURL}`);
                         onImageSelect(imageURL);
                     }
-                }/> && <br/>
+                }/>
             }
-            <SmallButton type="submit" text={showFilePicker ? "Upload" : "Save"}/>
+            <br/><SmallButton type="submit" text={showFilePicker ? "Upload" : "Save"}/>
         </form>
     );
 }

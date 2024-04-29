@@ -24,7 +24,7 @@ function authenticatedHomepage() {
                                 <h1 className={styles["better-header-large"]}>Latest Work</h1>
                                 <br/>
                                 <div className={styles["latest-work"]}>
-                                    <div><Drawing/></div>
+                                    <Drawing/>
                                     <button className={styles["meta-overlay"]}>Date・Title・Prompt</button>
                                 </div>
                             </div>
@@ -45,16 +45,10 @@ function authenticatedHomepage() {
                             </div>
                         </div>
                     </div>
-                    <div className={styles.container}>
-                        <div className={styles["info-modal-lower"]}>
-                            <div className="box">
-                                <div className="column">
-                                    <h2>Library</h2>
-                                    <p>View and edit previous works, manage versions, or track progress</p>
-                                    <Carousel/>
-                                </div>
-                            </div>
-                        </div>
+                    <div className={styles["info-modal-lower"]}>
+                        <h2>Library</h2>
+                        <p>View and edit previous works, manage versions, or track progress</p>
+                        <Carousel/>
                     </div>
                 </div>
             </main>
