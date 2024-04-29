@@ -34,9 +34,22 @@ router.post('/', bodyParser.json(), (req, res) => {
 
 // Update item by id in database
 router.put('/:id', (req, res) => {
+    console.log("update item");
     Drawing.findByIdAndUpdate(req.params.id, req.body)
-        .then((item) => res.json({msg: 'Updated successfully'}))
-        .catch((err) => res.status(400).json({error: 'Unable to update the Database'}));
+        .then((item) => {
+            console.log("updated item: ");
+            console.log(item);
+            console.log("to: ");
+            console.log(req.body);
+            res.json({msg: 'Updated successfully'});
+
+        })
+        .catch((err) => {
+            console.log(`error updating item:`)
+            console.log(req)
+            console.error(err);
+            res.status(400).json({error: 'Unable to update the Database'});
+        });
 });
 
 // Delete item by id in database
