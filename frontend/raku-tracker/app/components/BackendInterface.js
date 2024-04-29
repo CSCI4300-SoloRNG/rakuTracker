@@ -40,15 +40,8 @@ export async function uploadDrawing(drawing) {
 export async function editDrawing(drawing) {
     console.log("editDrawing");
     console.log(drawing);
-    const response = axios.post(
-        //TODO edit url
-        "http://localhost:42069/api/drawing", {
-            url: drawing.url,
-            time: drawing.time,
-            prompt: drawing.prompt,
-            tags: drawing.tags
-            // TODO add ID
-        }, {
+    const response = axios.put(
+        `http://localhost:42069/api/drawing/${drawing._id}`, drawing, {
             headers: {
                 "Content-Type": "application/json; charset=utf-8"
             }
