@@ -76,7 +76,7 @@ export default function Edit({params}) {
                     <div className={styles["left-aligned-column"]}>
                         <h2 className={styles["better-header"]}>Details</h2>
                         <UploadForm onUpload={uploadHandler} defaultPrompt={drawing.prompt} defaultTags={drawing.tags}
-                                    defaultTime={drawing.time}/>
+                                    defaultTime={drawing.time} _id={drawing._id}/>
                     </div>
                 </div>
 
