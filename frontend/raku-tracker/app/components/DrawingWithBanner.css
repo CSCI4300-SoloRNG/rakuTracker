@@ -1,5 +1,4 @@
 .drawing-holder {
-
     display: flex;
     width: 100%;
     justify-content: center;
@@ -22,4 +21,13 @@
     font-family: 'Mitr';
     transform: translate(0%, -150%);
     backdrop-filter: blur(1px);
+}
+
+.drawing-holder:not(:has(>.fake-img)) {
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.drawing-holder:not(:has(>.fake-img)):hover {
+    opacity: 0.7;
 }

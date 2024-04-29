@@ -3,10 +3,6 @@
     position: relative; /* Ensure proper positioning for absolute elements */
 }
 
-.drawing:not(:has(>.fake-img)){
-    cursor:pointer;
-}
-
 .drawing > img, .drawing > .fake-img {
     top: 0;
     left: 0;
