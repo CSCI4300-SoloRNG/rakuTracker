@@ -139,13 +139,13 @@ export async function createAccount(email, username, password) {
 }
 
 export async function isLoggedIn() {
-    if(getCookie("auth_token") === undefined) {
+    if (getCookie("auth_token") === undefined) {
         return false;
     }
     console.log("verifying cookie");
     const response = await axios.post("http://localhost:42069/api/cookieJwtAuth", {
         token: getCookie("auth_token")
-    },{
+    }, {
         headers: {
             "Content-Type": "application/json; charset=utf-8"
         }

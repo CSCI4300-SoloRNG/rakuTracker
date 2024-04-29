@@ -15,8 +15,9 @@ export default function NotFoundPage() {
             <main>
                 <div className={styles["outer-container"]}>
                     <div className={styles["better-h1"]}>
-                        <h1 className={styles["better-header-large"]}>Uh oh!! 404 ewwow, page not fouwd ｡･ﾟﾟ･(థ Д
-                            థ。)･ﾟﾟ･｡ </h1>
+                        <h1 className={styles["better-header-large"]}>
+                            Uh oh!! 404 ewwow, page not fouwd ｡･ﾟﾟ･(థ Д థ。)･ﾟﾟ･｡
+                        </h1>
                     </div>
                     <Drawing img="https://media.tenor.com/tNUmI0dD6VEAAAAj/despair.gif"/>
                 </div>

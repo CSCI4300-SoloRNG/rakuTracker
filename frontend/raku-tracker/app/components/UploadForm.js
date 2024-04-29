@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import SmallButton from "@/app/components/SmallButton";
 import FilePickerButton from "@/app/components/FilePickerButton";
 
-const UploadForm = ({onUpload, onImageSelect, showFilePicker, defaultPrompt, defaultTime, defaultTags, _id=""}) => {
+const UploadForm = ({onUpload, onImageSelect, showFilePicker, defaultPrompt, defaultTime, defaultTags, _id = ""}) => {
 
     console.log(`defaultPrompt: ${defaultPrompt}, defaultTime: ${defaultTime}, defaultTags: ${defaultTags}`);
     const [url, setUrl] = useState('');

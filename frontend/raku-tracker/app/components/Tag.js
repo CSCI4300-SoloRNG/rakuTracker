@@ -10,7 +10,7 @@ const Tag = (props) => {
             type={'button'}
         >
             <div className={'tag-text'}>
-            {props.text}
+                {props.text}
             </div>
         </button>
     );

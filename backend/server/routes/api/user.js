@@ -36,12 +36,10 @@ router.post('/signup', bodyParser.json(), (req, res) => {
                     res.json({msg: 'User added successfully'});
 
                     console.log(`created user ${req.body.username}`);
-                })
-                .catch((err) => {
-                    console.error(err);
-                    res.status(400).json({error: '400 Error ' + err});
-
-                });
+                }).catch((err) => {
+                console.error(err);
+                res.status(400).json({error: '400 Error ' + err});
+            });
         });
     })
 });

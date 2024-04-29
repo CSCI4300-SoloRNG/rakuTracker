@@ -23,7 +23,7 @@ export default function Edit({params}) {
         data.url = drawing.url;
         editDrawing(data).then(r => {
             console.log(r);
-            if(r){
+            if (r) {
                 location.assign("/")
                 // TODO show success message?
             }
@@ -43,7 +43,7 @@ export default function Edit({params}) {
         // Fetch drawing data from server
         getDrawing(params["image-id"]).then(drawing => {
             console.log(`use effect: drawing: ${drawing}`);
-            if(drawing === undefined || drawing === null) {
+            if (drawing === undefined || drawing === null) {
                 drawing = {
                     time: "",
                     prompt: "",

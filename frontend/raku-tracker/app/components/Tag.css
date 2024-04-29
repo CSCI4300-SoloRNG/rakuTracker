@@ -12,8 +12,7 @@
     font-family: 'Mitr';
 }
 
-.tag-text
-{
+.tag-text {
     color: #ffffff;
-    mix-blend-mode:overlay;
+    mix-blend-mode: overlay;
 }
