@@ -14,6 +14,9 @@ const DrawingsContainer = () => {
             console.log(`use effect: drawings: ${drawings}`);
             if (drawings === undefined || drawings === null) {
                 drawings = [];
+            } else {
+                // only keep first 5 drawings
+                drawings = drawings.slice(0, Math.min(drawings.length - 1, 5));
             }
             setDrawings(drawings);
         });
