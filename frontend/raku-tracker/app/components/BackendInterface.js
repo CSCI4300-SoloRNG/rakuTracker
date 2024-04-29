@@ -3,6 +3,8 @@
 import axios from 'axios';
 import {getCookie} from 'cookies-next'
 
+axios.defaults.withCredentials = true
+
 
 function blobUrlToFile(blobUrl) {
     let fileName = `${blobUrl.name}.${blobUrl.extension}`;
@@ -137,8 +139,20 @@ export async function createAccount(email, username, password) {
 }
 
 export async function isLoggedIn() {
-    // TODO send auth request to backend
-    // TODO placeholder
-    let response = {"ok": getCookie("auth_token") !== undefined};
-    return response.ok;
+    if(getCookie("auth_token") === undefined) {
+        return false;
+    }
+    console.log("verifying cookie");
+    const response = await axios.post("http://localhost:42069/api/cookieJwtAuth", {
+        token: getCookie("auth_token")
+    },{
+        headers: {
+            "Content-Type": "application/json; charset=utf-8"
+        }
+    }).catch(error => {
+        console.log(error);
+        return false;
+    });
+    console.log(response);
+    return response.status === 200;
 }
