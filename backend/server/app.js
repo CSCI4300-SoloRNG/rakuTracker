@@ -12,6 +12,8 @@ const logins = require('./routes/api/login');
 app.use('/api/login', logins);
 const users = require('./routes/api/user');
 app.use('/api/user', users);
+const auth= require('./routes/api/cookieJwtAuth');
+app.use('/api/cookieJwtAuth', auth);
 
 
 const conn_str = process.env.CONN_STR;
