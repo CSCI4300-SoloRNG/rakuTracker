@@ -23,7 +23,7 @@ const DrawingsContainer = () => {
         <div className="carousel">
             {/* Map over the array of default drawings and render Drawing components */}
             {drawings.map((drawing) => (
-                <Drawing key={drawing.id} id={drawing.id} img={drawing.url}/>
+                <Drawing key={drawing._id} _id={drawing._id} img={drawing.url}/>
             ))}
         </div>
     );
