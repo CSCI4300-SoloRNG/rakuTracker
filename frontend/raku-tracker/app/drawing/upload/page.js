@@ -8,10 +8,8 @@ import UploadForm from "@/app/components/UploadForm";
 import {uploadDrawing} from "@/app/components/BackendInterface";
 
 export default function Upload() {
-    const [drawingUrl, setDrawingUrl] = useState([]);
-    const [initialDrawingUrl, setInitialDrawingUrl] = useState([
-        "https://cdn.discordapp.com/attachments/1008460812710596668/1233141115100860500/rakutrackerSplash.png?ex=662c03a8&is=662ab228&hm=70ab7a90846afd238cf200fc7f0cf2e4c9865aa766e1a4c99f9091d9a996ad29&"
-    ]);
+    const [drawingUrl, setDrawingUrl] = useState("");
+
 
     const uploadHandler = (data) => {
         console.log("uploadHandler");
@@ -32,7 +30,6 @@ export default function Upload() {
         console.log("updatePreview");
         console.log(imgUrl);
         setDrawingUrl(imgUrl);
-        setInitialDrawingUrl(imgUrl);
     }
 
     return (
@@ -49,14 +46,14 @@ export default function Upload() {
                     <div className={styles["centered-column"]}>
                         <h2 className={`${styles["better-header"]}`}>Preview</h2>
                         <div>
-                            <Drawing img={initialDrawingUrl}/>
+                            <Drawing img={drawingUrl}/>
                         </div>
                     </div>
 
                     {/*Form (Prompt, Tags, Time)*/}
                     <div className={styles["left-aligned-column"]}>
                         <h2 className={styles["better-header"]}>Details</h2>
-                        <UploadForm onUpload={uploadHandler} onImageSelect={updatePreview}/>
+                        <UploadForm onUpload={uploadHandler} onImageSelect={updatePreview} showFilePicker={true}/>
                     </div>
                 </div>
 
