@@ -33,9 +33,11 @@ router.post('/', bodyParser.json(), (req, res) => {
 });
 
 // Update item by id in database
-router.put('/:id', (req, res) => {
-    console.log("update item");
-    Drawing.findByIdAndUpdate(req.params.id, req.body)
+router.put('/:id', bodyParser.json(), (req, res) => {
+    console.log("update item using");
+    console.log(req.body);
+    const id = req.params.id
+    Drawing.findByIdAndUpdate(id, req.body, {new: true})
         .then((item) => {
             console.log("updated item: ");
             console.log(item);
