@@ -83,7 +83,7 @@ const UploadForm = ({onUpload, onImageSelect, showFilePicker, defaultPrompt, def
                     }
                 }/> && <br/>
             }
-            <SmallButton type="submit" text="Upload" />
+            <SmallButton type="submit" text={showFilePicker ? "Upload" : "Save"}/>
         </form>
     );
 }
