@@ -21,6 +21,7 @@ router.get('/:id', (req, res) => {
 // Add user
 router.post('/signup', bodyParser.json(), (req, res) => {
     hash = ""
+    console.log(`creating user ${req.body.username}`);
     bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(req.body.password, salt, function (err, hash) {
             if (err) {
@@ -31,8 +32,16 @@ router.post('/signup', bodyParser.json(), (req, res) => {
             req.params.id = req.body.username
             console.log(req.body)
             User.create(req.body)
-                .then((item) => res.json({msg: 'User added successfully'}))
-                .catch((err) => res.status(400).json({error: '400 Error ' + err}));
+                .then((item) => {
+                    res.json({msg: 'User added successfully'});
+
+                    console.log(`created user ${req.body.username}`);
+                })
+                .catch((err) => {
+                    console.error(err);
+                    res.status(400).json({error: '400 Error ' + err});
+
+                });
         });
     })
 });

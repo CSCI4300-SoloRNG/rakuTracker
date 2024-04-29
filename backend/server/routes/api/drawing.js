@@ -5,6 +5,7 @@ const Drawing = require('../../models/drawing');
 
 // Gets all items
 router.get('/', (req, res) => {
+    console.log("get all drawings");
     Drawing.find().then((items) => {
         console.log(`responding to get all drawings request with ${items}`);
         res.json(items);
