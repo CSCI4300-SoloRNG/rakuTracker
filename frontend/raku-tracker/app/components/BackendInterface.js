@@ -40,7 +40,7 @@ export async function uploadDrawing(drawing) {
 export async function editDrawing(drawing) {
     console.log("editDrawing");
     console.log(drawing);
-    axios.post(
+    const response = axios.post(
         //TODO edit url
         "http://localhost:42069/api/drawing", {
             url: drawing.img,
@@ -53,29 +53,30 @@ export async function editDrawing(drawing) {
                 "Content-Type": "application/json; charset=utf-8"
             }
         }
-    ).then(response => {
-        console.log(response);
-        return response.status === 200;
-    }).catch(error => {
+    ).catch(error => {
         console.log(error);
         //TODO error page
         return false;
     });
+    console.log(response);
+    return response.status === 200;
 }
 
 export async function getDrawing(image_id) {
     console.log("getDrawing");
-    axios.get(
+    const response = await axios.get(
         `http://localhost:42069/api/drawing/${image_id}`
     ).then(response => {
-        console.log(response);
-        // TODO check if okay first
-        return response.data
+        return response;
     }).catch(error => {
         console.log(error);
         //TODO error page
         return false;
     });
+
+    console.log(response);
+    // TODO check if okay first
+    return response.data
 }
 
 export async function getDrawings(limit = 5) {

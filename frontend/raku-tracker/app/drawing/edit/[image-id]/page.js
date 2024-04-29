@@ -18,9 +18,20 @@ export default function Edit({params}) {
 
     const uploadHandler = (data) => {
         console.log("uploadHandler");
-        // TODO upload drawing to server
-        editDrawing(data);
         console.log(data);
+        editDrawing(data).then(r => {
+            console.log(r);
+            if(r){
+                location.assign("/")
+                // TODO show success message?
+            }
+            // TODO show error message
+            return r;
+        }).catch(e => {
+            console.log(e);
+            // TODO show error message
+            return false;
+        });
     };
 
     // TODO get drawing data from server
@@ -29,13 +40,20 @@ export default function Edit({params}) {
     useEffect(() => {
         // Fetch drawing data from server
         getDrawing(params["image-id"]).then(drawing => {
-            console.log(drawing);
-            // TODO error handling
+            console.log(`use effect: drawing: ${drawing}`);
+            if(drawing === undefined || drawing === null) {
+                drawing = {
+                    time: "",
+                    prompt: "",
+                    url: "",
+                    tags: [],
+                };
+            }
             setDrawing(drawing);
         });
     }, []); // Empty dependency array ensures this effect runs only once, on component mount
 
-
+    console.log(`drawing (from edit page): ${drawing}`);
     return (
         <div>
             <Header login={false} createAccount={false} upload={false} logout={true}/>
