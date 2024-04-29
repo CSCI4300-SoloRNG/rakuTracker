@@ -1,0 +1,30 @@
+.latest-work {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.latest-work .drawing {
+    flex: 1;
+    width: 50%;
+}
+
+.latest-work .meta-overlay {
+    padding: 8px 16px;
+    background-color: #352d41cf;
+    text-align: left;
+    text-decoration: none;
+    display: block;
+    width: 80%;
+    font-size: 2.0vw;
+    margin: 0;
+    cursor: pointer;
+    border: none;
+    color: #ffffff;
+    border-radius: 8px;
+    font-family: 'Mitr';
+    transform: translate(-9%, -200%);
+    backdrop-filter: blur(1px);
+}
