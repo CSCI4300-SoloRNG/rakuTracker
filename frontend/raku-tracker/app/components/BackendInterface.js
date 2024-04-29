@@ -97,40 +97,34 @@ export async function getDrawings(limit = 5) {
 }
 
 export async function authenticate(username, password) {
-    let response;
     // TODO send username and password to server
 
-    axios.post("http://localhost:42069/api/login/", {
+    const response = await axios.post("http://localhost:42069/api/login/", {
         "username": username,
         "password": password
     }, {
         headers: {
             "Content-Type": "application/json; charset=utf-8"
         }
-    }).then(response => {
-        console.log(response);
-
-        if (response.ok && response.data.token !== undefined) {
-            // if success, store token and return true
-            // TODO may need httponly, secure, samesite. may also need to change maxage or use expires
-            document.cookie = `auth_token=${response.data.token}; path=/; max-age=86400;`;
-            return true;
-        } else {
-            return false;
-        }
     }).catch(error => {
         console.log(error);
         return false;
-    })
+    });
+    console.log(response);
 
+    if (
+        response.status !== 200 || response.data.token === undefined) {
+        return false;
+    }
+
+    // if success, store token and return true
+    // TODO may need httponly, secure, samesite. may also need to change maxage or use expires
+    document.cookie = `auth_token=${response.data.token}; path=/; max-age=86400;`;
+    return true;
 
 }
 
 export async function createAccount(email, username, password) {
-    // TODO send username and password to server
-    // TODO check response from server.
-
-
     const response = await axios.post("http://localhost:42069/api/user/signup", {
         "email": email,
         "username": username,
@@ -145,7 +139,7 @@ export async function createAccount(email, username, password) {
     });
     console.log(response);
 
-    return response.status===200;
+    return response.status === 200;
 }
 
 export async function isLoggedIn() {
