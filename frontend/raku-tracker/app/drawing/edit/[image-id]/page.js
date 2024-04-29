@@ -19,6 +19,8 @@ export default function Edit({params}) {
     const uploadHandler = (data) => {
         console.log("uploadHandler");
         console.log(data);
+        // TODO this is a hack to preserve the url. only works bc the url is not editable in the page
+        data.url = drawing.url;
         editDrawing(data).then(r => {
             console.log(r);
             if(r){
