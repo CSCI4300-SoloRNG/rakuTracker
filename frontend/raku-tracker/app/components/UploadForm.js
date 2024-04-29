@@ -1,14 +1,21 @@
 "use client"
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import SmallButton from "@/app/components/SmallButton";
 import FilePickerButton from "@/app/components/FilePickerButton";
 
-const UploadForm = ({onUpload, onImageSelect, showFilePicker}) => {
+const UploadForm = ({onUpload, onImageSelect, showFilePicker, defaultPrompt, defaultTime, defaultTags}) => {
+
+    console.log(`defaultPrompt: ${defaultPrompt}, defaultTime: ${defaultTime}, defaultTags: ${defaultTags}`);
     const [img, setImg] = useState('');
-    const [prompt, setPrompt] = useState('');
-    const [tags, setTags] = useState('');
-    const [time, setTime] = useState('');
-    const id = crypto.randomUUID();
+    const [prompt, setPrompt] = useState(defaultPrompt || '');
+    const [tags, setTags] = useState(defaultTags || '');
+    const [time, setTime] = useState(defaultTime || '');
+
+    useEffect(() => {
+        setPrompt(defaultPrompt || '');
+        setTags(defaultTags || '');
+        setTime(defaultTime || '');
+    }, [defaultPrompt, defaultTags, defaultTime]);
 
     const submitHandler = (event) => {
         event.preventDefault();
@@ -18,7 +25,7 @@ const UploadForm = ({onUpload, onImageSelect, showFilePicker}) => {
             return;
         }
         console.log("calling onUpload");
-        onUpload({img, prompt, tags, time, id});
+        onUpload({img, prompt, tags, time});
 
         //TODO
         location.assign("/") // redirect to home page
