@@ -94,9 +94,16 @@
 
 .latest-work {
     display: flex;
+
+    width: 100%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.latest-work .drawing{
+
+    flex: 1;
 }
 
 .latest-work .meta-overlay {

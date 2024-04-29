@@ -1,15 +1,10 @@
 .carousel {
-    /* display all children in row*/
     display: flex;
-    /* put some space between children*/
+    width: 100%;
+    overflow-x: hidden; /* To prevent horizontal scrolling */
     gap: 10px;
-    /* make sure it leaves space between it and the footer below*/
 }
 
-.carousel img {
-    /*make images take up full height of screen*/
-    height: 100%;
-    width: 100%;
-    /*make images not stretch*/
-    object-fit: cover;
+.carousel .drawing {
+    flex: 1;
 }
