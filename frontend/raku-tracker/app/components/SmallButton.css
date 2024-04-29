@@ -1,5 +1,4 @@
 .small-button {
-
     padding: 8px 16px;
     background-color: #B178FA;
     text-align: center;
@@ -13,4 +12,28 @@
     color: #BFBAFF;
     border-radius: 8px;
     font-family: 'Mitr';
+    z-index: 100;
+    position: relative;
+    background-size: 100%;
+
+    /* darkened version */
+    &:before {
+        position: absolute;
+        top: 0; left: 0;
+        opacity: 0;
+        content: '';
+        height: 100%;
+        border-radius: inherit;
+        background-image: linear-gradient(to bottom, #693f98, #542c7c, #3c1f5b, #28143a);
+        width: 100%;
+        z-index: -100;
+        transition: opacity 0.3s;
+    }
+
+    /*show darkened version on hover*/
+    &:hover {
+        &:before {
+            opacity: 1;
+        }
+    }
 }
