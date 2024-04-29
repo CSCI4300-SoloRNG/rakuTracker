@@ -22,16 +22,22 @@ router.get('/:id', (req, res) =>
 // Add user
 router.post('/signup', bodyParser.json(), (req, res) => 
 {
-    const { password } = req.body;
-    bcrypt.hash(req.params.password, 10, function(err, hashedPassword) {
-        if (err) {
-          console.error(err);
-          return res.status(500).send('Error hashing password: ' + err);
-        }
-    });
-    User.create(req.body)
-    .then((item)=>res.json({ msg: 'User added successfully' }))
-    .catch((err)=>res.status(400).json({ error: '400 Error, bad request' }));
+    hash = ""
+    bcrypt.genSalt(10,(err,salt) => 
+    {
+        bcrypt.hash(req.body.password, salt, function(err, hash) {
+            if (err) {
+              console.error(err);
+              return res.status(500).send('Error hashing password: ' + err);
+            }
+            req.body.password = hash;
+            req.params.id = req.body.username
+            console.log(req.body)
+            User.create(req.body)
+            .then((item)=>res.json({ msg: 'User added successfully' }))
+            .catch((err)=>res.status(400).json({ error: '400 Error ' + err}));
+        });
+    })
 });
 
 // Update user by id in database
