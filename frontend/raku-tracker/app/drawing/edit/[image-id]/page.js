@@ -5,7 +5,8 @@ import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import Drawing from "@/app/components/Drawing";
 import UploadForm from "@/app/components/UploadForm";
-import {editDrawing, getDrawing, uploadDrawing} from "@/app/components/BackendInterface";
+import {editDrawing, getDrawing, uploadDrawing, deleteDrawing} from "@/app/components/BackendInterface";
+import SmallButton from '@/app/components/SmallButton';
 
 export default function Edit({params}) {
 
@@ -79,6 +80,8 @@ export default function Edit({params}) {
                         <h2 className={styles["better-header"]}>Details</h2>
                         <UploadForm onUpload={uploadHandler} defaultPrompt={drawing.prompt} defaultTags={drawing.tags}
                                     defaultTime={drawing.time} _id={drawing._id}/>
+                        <SmallButton text="Delete" onClick={() => {deleteDrawing(drawing);
+                        location.assign("/")}}/>
                     </div>
                 </div>
 

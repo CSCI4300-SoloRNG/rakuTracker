@@ -57,6 +57,25 @@ export async function editDrawing(drawing) {
     return response.status === 200;
 }
 
+// upload drawing to database
+export async function deleteDrawing(drawing) {
+    console.log("deleteDrawing");
+    console.log(drawing);
+    const response = await axios.delete(
+        `http://localhost:42069/api/drawing/${drawing._id}`, drawing, {
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            }
+        }
+    ).catch(error => {
+        console.log(error);
+        //TODO error page
+        return false;
+    });
+    console.log(response);
+    return response.status === 200;
+}
+
 export async function getDrawing(image_id) {
     console.log("getDrawing");
     const response = await axios.get(
