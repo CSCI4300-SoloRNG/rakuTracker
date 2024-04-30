@@ -93,7 +93,9 @@ export async function getDrawings(limit = 5) {
 }
 
 export async function authenticate(username, password) {
+    console.log("top of authenticate");
     // TODO send username and password to server
+
 
     const response = await axios.post("http://localhost:42069/api/login/", {
         "username": username,
@@ -102,14 +104,21 @@ export async function authenticate(username, password) {
         headers: {
             "Content-Type": "application/json; charset=utf-8"
         }
+    }).then(response => {
+        console.log("response");
+        console.log(response);
+        return response;
     }).catch(error => {
+        console.log("catch error");
         console.log(error);
         return false;
     });
+    console.log("called");
     console.log(response);
 
-    if (
-        response.status !== 200 || response.data.token === undefined) {
+
+    if (response === false || response.status !== 200 || response.data.token === undefined) {
+
         return false;
     }
 
