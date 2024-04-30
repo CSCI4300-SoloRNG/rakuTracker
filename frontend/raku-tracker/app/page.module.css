@@ -115,3 +115,8 @@
     flex-direction: row;
     justify-content: left;
 }
+
+.error-text {
+    color: red;
+    font-size: 0.8vw;
+}

@@ -11,12 +11,13 @@ function onSubmitHandler(event) {
     console.log(`Logging in as ${event.target.username.value}, password: ${event.target.password.value}`);
     // TODO verify inputs
     authenticate(event.target.username.value, event.target.password.value).then(r => {
+        console.log("login response");
         if (r) {
             console.log("Login successful");
             location.assign("/") // redirect to home page
         } else {
             console.log("Login failed");
-            // display error message
+            document.getElementById("error").innerText = "Login failed. Please try again.";
         }
     });
 }
@@ -41,6 +42,7 @@ export default function Login() {
                     <br/>
                     <br/>
                     <Button text="Login" type="submit"/>
+                    <p id={"error"} className={styles["error-text"]}></p>
                     <br/>
                     <br/>
                     Don't have an account?
