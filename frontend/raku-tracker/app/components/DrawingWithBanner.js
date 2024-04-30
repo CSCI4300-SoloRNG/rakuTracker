@@ -8,8 +8,17 @@ export default function DrawingWithBanner(props) {
         return `${dateObject.toLocaleString()}`
     }
 
+    if(props.drawing === undefined) {
+        props.drawing = {
+            time: "",
+            prompt: "",
+            url: "",
+            _id: ""
+        }
+    }
+
     return (
-        <div className={"drawing-holder"}>
+        <div className={"drawing-holder"} key={props.drawing._id}>
             <Drawing url={props.drawing.url} _id={props.drawing._id}/>
             <button className={"meta-overlay"}>
                 {`${convertDateString(props.drawing.time)}`}<br/>{`"${props.drawing.prompt}"`}
