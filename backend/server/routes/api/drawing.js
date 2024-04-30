@@ -24,6 +24,7 @@ router.get('/:id', (req, res) => {
 
 // Add item
 router.post('/', bodyParser.json(), (req, res) => {
+    console.log(req.body)
     Drawing.create(req.body)
         .then((item) => res.json({msg: 'Item added successfully'}))
         .catch((err) => {

@@ -11,7 +11,7 @@ router.post('/', bodyParser.json(), (req, res) => {
         const user = jwt.verify(token, process.env.MY_SECRET);
         res.status(200).json({user});
         console.log("Token success!")
-        next();
+        // next();
     } catch (err) {
         console.log(err);
         res.clearCookie("token");
