@@ -21,6 +21,7 @@ router.post('/', bodyParser.json(), (req, res) => {
         .then(user => {
             if (!user) {
                 console.log('User not found');
+                res.status(403).json({error: 'Invalid username or password'});
                 return;
             }
             // Accessing the found user
@@ -41,5 +42,6 @@ router.post('/', bodyParser.json(), (req, res) => {
         })
         .catch(err => {
             console.error('Error finding user:', err);
+            res.status(403).json({error: 'Invalid username or password'});
         });
 })
